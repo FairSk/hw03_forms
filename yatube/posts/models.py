@@ -21,7 +21,7 @@ class Group(models.Model):
 class Post(models.Model):
 
     text = models.TextField(verbose_name='Текст')
-    pub_date = models.DateTimeField(auto_now_add=True, 
+    pub_date = models.DateTimeField(auto_now_add=True,
                                     verbose_name='Дата публикации')
     author = models.ForeignKey(
         User,
