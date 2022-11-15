@@ -28,8 +28,7 @@
               <a class="nav-link link-light" href="<!--  -->">Изменить пароль</a>
             </li>
             <li class="nav-item">
-              Пользователь:
-              <a class="nav-link link-light" href="{% url 'posts:profile' user.username%}"> {{ user.username }}</a>
+              <span class="nav-link link-light"> Пользователь: <a href="{% url 'posts:profile' user.username%}">{{ user.username }}</a></span>
             </li> 
             <li class="nav-item"> 
               <a class="nav-link link-light" href="<!--  -->">Выйти</a>
