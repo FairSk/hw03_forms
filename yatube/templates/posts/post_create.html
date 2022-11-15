@@ -1,11 +1,7 @@
 {% extends "base.html" %}
 
 {% block title %}
-  {% if is_edit %}
-    Изменить пост
-  {% else %}
-    Новый пост
-  {% endif %} 
+  {% if is_edit %} Изменить пост {% else %} Новый пост {% endif %} 
 {% endblock %}
 
 {% block content %}
@@ -22,26 +18,19 @@
               {% csrf_token %}     
               {{ form.non_field.errors }}
               {% for item in form %}
-              <div class="form-group row my-3 p-3">
-                <label for="{{ item.id_for_label}}">
-                  {{ item.title }}    
-                  <span class="required text-danger" >*</span>                  
-                </label>
-                {{item|addclass:"form-control"}}
-                <div class="invalid-feedback">
-                  {{item.errors}}
-                </div>
-                <small id="id_text-help" class="form-text text-muted">
-                  {% comment %}
-                    Это вель пояснения к ячейкам в модели нет такого же текста, или я туплю
-                  {% endcomment %}
-                  {% if forloop.first%}
-                    Текст нового поста
-                  {% else %}
-                    Группа, к которой будет относиться пост      
-                  {% endif %}
-                </small>                  
-              </div>       
+                <div class="form-group row my-3 p-3">
+                  <label for="{{ item.id_for_label}}">
+                    {{ item.label }}
+                    <span class="required text-danger" >*</span>                  
+                  </label>
+                  {{item|addclass:"form-control"}}
+                  <div class="invalid-feedback">
+                    {{item.errors}}
+                  </div>
+                  <small id="id_text-help" class="form-text text-muted">
+                    {{ item.label }}
+                  </small>                  
+                </div>       
               {% endfor %}
   
               <div class="d-flex justify-content-end">

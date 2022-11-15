@@ -44,4 +44,7 @@ class Post(models.Model):
         ordering = ('-pub_date',)
 
     def __str__(self):
-        return (f'{self.text[:30]},{self.pub_date},{self.author},{self.group}')
+        return (f'Text: {self.text[:30]}, '
+                f'Publicated at: {self.pub_date}, '
+                f'Author: {self.author.username}, '
+                f'Group: {self.group}')

@@ -27,12 +27,12 @@
             <li class="nav-item"> 
               <a class="nav-link link-light" href="<!--  -->">Изменить пароль</a>
             </li>
+            <li class="nav-item">
+              Пользователь:
+              <a class="nav-link link-light" href="{% url 'posts:profile' user.username%}"> {{ user.username }}</a>
+            </li> 
             <li class="nav-item"> 
               <a class="nav-link link-light" href="<!--  -->">Выйти</a>
-            </li>
-            <li class="nav-item"> 
-              Пользователь: 
-              <a class="nav-link link-light" href="{% url 'posts:profile' user.username %}">{{ user.username }}</a>
             </li>
           {% else %}
             <li class="nav-item"> 
